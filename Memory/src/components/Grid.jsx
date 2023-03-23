@@ -54,7 +54,6 @@ function Grid() {
                 setTimeout(function()
                 {
                     if (!(cardflipped[0].value===cardflipped[1].value)){
-                        console.log('diffent') 
                         setcardflip(prevcardflip => {
                             return prevcardflip.map((card) => {  
                                 return (cardflipped.some((el)=> el.id == card.id)) ? {...card, flipped: !card.flipped } : card
@@ -74,6 +73,14 @@ function Grid() {
             }
         
     },[cardcountflipped])
+
+    useEffect(()=>{
+
+        if(cardflip.every((el)=> el.matched == true)){
+            console.log('Youwon')
+        }
+
+    },[cardflip])
 
 
     
