@@ -56,17 +56,14 @@ function Grid() {
                     if (!(cardflipped[0].value===cardflipped[1].value)){
                         setcardflip(prevcardflip => {
                             return prevcardflip.map((card) => {  
-                                return (cardflipped.some((el)=> el.id == card.id)) ? {...card, flipped: !card.flipped } : card
+                                return (cardflipped.some((el)=> el.id == card.id)) ? {...card, flipped: !card.flipped , matched: false } : card
                             })
                         })
                         
                     }else{
                         console.log('you matched')
-                        setcardflip(prevcardflip => {
-                            return prevcardflip.map((card) => {  
-                                return (cardflipped.some((el)=> el.id == card.id)) ? {...card, matched: true } : card
-                            })
-                        })
+                        
+                        
                     }
                     setcardflipped([])
                 },1000)
@@ -83,19 +80,6 @@ function Grid() {
     },[cardflip])
 
 
-    
-    
-
-    
-    
-    /* function flip(id) {
-        console.log('clicked')
-        setcardflip(prevcardflip => {
-            return prevcardflip.map((card) => {   
-                return card.id === id ? {...card, flipped: !card.flipped } : card
-            })
-        })
-    } */
     const flip = useCallback((id) => {    
         setcardflip((prevcard) =>
             prevcard.map((card) => {
@@ -103,7 +87,7 @@ function Grid() {
                 setcardflipped(prev => [...prev, card])
                 //setcountcardturnt
                 setcardcountflipped(prev => prev+1)
-                return { ...card, flipped: true };
+                return { ...card, flipped: true , matched: true };
 
             }else{
                 return card;
