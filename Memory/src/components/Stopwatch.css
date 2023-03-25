@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  height: 50px;
+  /* Created with https://www.css-gradient.com */
+  background: #67d3d1;
+  background: -webkit-linear-gradient(left, #67d3d1, #21d5df);
+  background: -moz-linear-gradient(left, #67d3d1, #21d5df);
+  background: linear-gradient(to right, #67d3d1, #21d5df);
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 10px;
+  border: solid 2px black;
+  margin-bottom: 20px;
+}
+
+.time {
+  height: 80%;
+  background-color: aliceblue;
+  border-radius: 15px;
+  text-align: center;
+  width: 10%;
+  text-shadow: 2px 2px aqua;
+}
+.points {
+  flex-basis: 30%;
+  height: 80%;
+  background-color: aliceblue;
+  border-radius: 15px;
+  text-align: center;
+  text-shadow: 2px 2px 2px aqua;
+}
